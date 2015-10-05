@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Express</title>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+	<h1><%= title %></h1>
+
+	<ul>
+		<% for(var i=0; l=items.length, i<l; i++){ %>
+			<li><%= items[i].desc %></li>
+		<% } %>
+	</ul>
+
+	<form action="/add" method="post">
+		<input type="text" name="newItem">
+		<button>Submit</button>
+	</form>
+
+
+<script src="jquery/dist/jquery.js"></script>
+<script src="bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
