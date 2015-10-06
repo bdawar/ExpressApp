@@ -9,6 +9,7 @@ var express = require('express'),
 	parser = require('body-parser');
 
 var app = express();
+var router = require('./todos');
 
 //App Config
 app.set('view engine', 'ejs');
@@ -16,11 +17,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 //Middleware
 app.use(express.static(path.join(__dirname, 'bower_components')));
-app.use(parser()); //body-parser
-app.use(require('./todos'));
+app.use(parser.urlencoded({ extended: false }));
+app.use(parser.json());
+app.use(router);
 
 //Server
 function doServe(){
-	console.log('Listening at 8888..');
+	console.log('Listening at '+port+'..');
 }
-app.listen(8888, doServe);
+var port = Number(process.env.PORT || 3000);
+app.listen(port, doServe);

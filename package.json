@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "Sample Express App",
   "main": "app.js",
-  "dependancies":{
-    "body-parser": "~1.0.2",
+  "dependencies":{
+    "body-parser": "~1.14.1",
     "ejs": "~1.0.0",
     "express": "~4.0.0"
   },
